@@ -35,34 +35,13 @@ public class Main {
 
 class Solution {
     public int rowWithMax1s(int arr[][]) {
-        int rows = arr.length;
-        int cols = arr[0].length;
-        
-        int mostSum = 0;
-        int currSum = 0;
-        int rowIdx = 0;
-        
-        for(int i = 0 ; i<rows; i++)
-        {
-            for(int j=0; j<cols; j++)
-            {
-                currSum += arr[i][j];
+        // code here
+        for(int i=0;i<arr[0].length;i++){
+            for(int j=0;j<arr.length;j++){
+                if(arr[j][i]==1)
+                return j;
             }
-            if(currSum == cols)
-            {
-                return i;
-            }
-            if(currSum > mostSum){
-                mostSum = currSum;
-                rowIdx = i;
-            }
-            currSum=0;
         }
-        if(mostSum==0){
-            return -1;
-        }else{
-            return rowIdx;
-        }
-        
+        return -1;
     }
 }
